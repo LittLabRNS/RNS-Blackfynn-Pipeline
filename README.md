@@ -1,5 +1,6 @@
 # RNS-Blackfynn-Pipeline
 This collection of scripts converts Neuropace RNS .dat files to .mef files, and organizes them so that they can be uploaded to Blackfynn.
+The Neuropace Responsive Neurostimulator (RNS) detects epileptiform activity and stimulates regions of the brain to terminate siezures. Though the RNS is continuously monitoring brain activity, it only saves 90 second recordings when it is triggered to do so. Recording triggers
 
 ## Setup
 ### Installing dependencies
@@ -15,6 +16,15 @@ For the Blackfynn API to work correctly, the user profile must be set up (see [t
 
 ### Settings
 Before running anything, make sure all of the correct settings and patient-specific info are set in `settings.py`. This file contains:
+
+## Data Given By Neuropace
+Neuropace sends us
+1. An ECoG_Catalog.csv file mapping each .dat file to a timestamp and a patient id
+2. The .dat files for each patient in folders labeled UPenn_PatientInitials
+3. A list (in CSV form) that associates the processed file names with the patient whose data it contains 
+
+## Outputs of Scripts
+
 
 ## Notes
 <b name="note-1">1.</b> Note that if this installation method is used, **all scripts** must also be run from inside the virtual environment.
