@@ -4,19 +4,23 @@ This collection of scripts converts Neuropace RNS .dat files to .mef files, and 
 ## Background
 The Neuropace Responsive Neurostimulator (RNS) detects epileptiform activity and stimulates regions of the brain to terminate siezures. Though the RNS is continuously monitoring brain activity, it only saves 90 second recordings when it is triggered to do so. Recording triggers include:
 
-* LONG EPISODES triggers initiate ECoG storage when a detected episode continues beyond a preset duration (LONG EPISODE LENGTH). This trigger can be used whenever detection is ENABLED.
+* LONG EPISODES triggers initiate ECoG storage when a detected episode continues beyond a preset duration (LONG EPISODE LENGTH).
 
-* PATTERN A and PATTERN B triggers initiate ECoG storage when an episode beginning with a characteristic pattern (Pattern A or Pattern B) is detected. Selecting one of these triggers may be helpful in evaluating the detection setting parameters. These triggers can be used whenever detection is ENABLED.
+* PATTERN A and PATTERN B triggers initiate ECoG storage when an episode beginning with a characteristic pattern (Pattern A or Pattern B) is detected. Selecting one of these triggers may be helpful in evaluating the detection setting parameters.
 
-* RESPONSIVE THERAPY triggers initiate ECoG storage when electrical stimulation therapy is delivered in response to a detected event. Selecting this trigger may be helpful in determining if therapy was delivered appropriately as well as evaluating the result of the therapy delivered. This trigger can be used whenever responsive therapy is ENABLED.
+* RESPONSIVE THERAPY triggers initiate ECoG storage when electrical stimulation therapy is delivered in response to a detected event. Selecting this trigger may be helpful in determining if therapy was delivered appropriately as well as evaluating the result of the therapy delivered.
 
-* NOISE triggers initiate ECoG storage when a 60 Hz signal is detected in the ECoG signal. Selecting this trigger may be helpful in troubleshooting the RNS® System. This trigger can be used whenever detection is ENABLED.
+* NOISE triggers initiate ECoG storage when a 60 Hz signal is detected in the ECoG signal. Selecting this trigger may be helpful in troubleshooting the RNS® System.
 
-* SATURATION triggers initiate ECoG storage when the amplitude of the ECoG is high. Selecting this trigger may be helpful in troubleshooting the RNS® System. This trigger can be used whenever detection is ENABLED.
+* SATURATION triggers initiate ECoG storage when the amplitude of the ECoG is high. Selecting this trigger may be helpful in troubleshooting the RNS® System.
 
 * MAGNET triggers initiate ECoG storage when a magnet is passed by the RNS® Neurostimulator. Selecting this trigger may be helpful in storing electrographic events that correspond to clinical symptoms experienced by the patient.
 
-* SCHEDULED triggers initiate ECoG storage at a specific time of day (ECOG STORAGE START TIMES). Selecting this trigger may be helpful in viewing activity occurring during specific times throughout the day. This trigger can be used whenever scheduled ECoGs are ENABLED.
+* SCHEDULED triggers initiate ECoG storage at a specific time of day (ECOG STORAGE START TIMES). Selecting this trigger may be helpful in viewing activity occurring during specific times throughout the day.
+
+Therapy Sequence
+Responsive therapy is delivered as a therapy sequence of up to 5 individually configured sequential
+therapies (electrical stimulation) in response to each detected episode.
 
 ## Setup
 ### Installing dependencies
