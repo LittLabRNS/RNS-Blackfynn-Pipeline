@@ -41,10 +41,12 @@ Before running anything, make sure all of the correct settings and patient-speci
 Neuropace sends us
 1. An ECoG_Catalog.csv file mapping each .dat file to a timestamp and a patient id
 2. The .dat files for each patient in folders labeled UPenn_PatientInitials
-3. A list (in CSV form) that associates the processed file names with the patient whose data it contains 
+
+## We generate
+3. A key list (in CSV form) that associates the processed file names with the patient whose data it contains 
 
 ## Outputs of Scripts
-
+1. 
 
 ## Notes
 <b name="note-1">1.</b> Note that if this installation method is used, **all scripts** must also be run from inside the virtual environment.
