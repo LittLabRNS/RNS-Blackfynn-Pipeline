@@ -33,7 +33,7 @@ therapies (electrical stimulation) in response to each detected episode.
 
 ## Setup
 ### Installing dependencies
-It is recommended to set up a virtual environment for these scripts in order to avoid conflicts with globally installed packages<sup>[1](#note-1)</sup>. This can be done using `pip`<sup>[2](#note-2)</sup> and `virtualenv`:
+It is recommended to set up a virtual environment for these scripts in order to avoid conflicts with globally installed packages<sup>[1](#note-1)</sup>. This can be done using `pip` and `virtualenv`:
 ```bash
 virtualenv env
 source env/bin/activate # to enter the virtual environment
@@ -43,19 +43,19 @@ deactivate # to exit the virtual environment
 ### Configuring the Blackfynn client
 For the Blackfynn API to work correctly, the user profile must be set up (see [this guide](http://docs.blackfynn.io/platform/clients/getting_started.html) for help).
 
-### Settings
-Before running anything, make sure all of the correct settings and patient-specific info are set in `settings.py`. This file contains:
+### Inputs and Outputs
 
-## Input Data
+## Inputs
 1. An ECoG_Catalog.csv file sent from Neuropace mapping each .dat file to a timestamp and a patient id
 2. The .dat files sent from Neuropace for each patient in folders labeled UPenn_PatientInitials
 3. A key list (in CSV form) we create that associates the processed file names with the patient whose data it contains 
 
-## Outputs of Scripts
+## Outputs
 1. The processed CSV file, which is outputted by the Python script and is identical to the original CSV file except that it also contains a column to keep track of the new file names
 2. The processed .dat files, which are outputted by the Python script and are identical to the original .dat files in content but have been assigned to a different file name
 
 ## Notes
 <b name="note-1">1.</b> Note that if this installation method is used, **all scripts** must also be run from inside the virtual environment.
 
-<b name="note-2">2.</b> I recommend using wheels to install the dependencies so that pip installs an optimized, pre-compiled version of numpy instead of building it from source. Newer versions of pip (9.0.1 and above) do this by default. Otherwise, this can be done by adding the `--use-wheel` option.
+## References
+http://www.neuropace.com/manuals/RNS_System_Physician_Manual.pdf
