@@ -18,7 +18,7 @@ The Neuropace Responsive Neurostimulator (RNS) detects epileptiform activity and
 
 * SCHEDULED triggers initiate ECoG storage at a specific time of day (ECOG STORAGE START TIMES). Selecting this trigger may be helpful in viewing activity occurring during specific times throughout the day.
 
-Therapy Sequence
+### Therapy Sequence
 Responsive therapy is delivered as a therapy sequence of up to 5 individually configured sequential
 therapies (electrical stimulation) in response to each detected episode.
 
@@ -37,16 +37,14 @@ For the Blackfynn API to work correctly, the user profile must be set up (see [t
 ### Settings
 Before running anything, make sure all of the correct settings and patient-specific info are set in `settings.py`. This file contains:
 
-## Data Given By Neuropace
-Neuropace sends us
-1. An ECoG_Catalog.csv file mapping each .dat file to a timestamp and a patient id
-2. The .dat files for each patient in folders labeled UPenn_PatientInitials
-
-## We generate
-3. A key list (in CSV form) that associates the processed file names with the patient whose data it contains 
+## Input Data
+1. An ECoG_Catalog.csv file sent from Neuropace mapping each .dat file to a timestamp and a patient id
+2. The .dat files sent from Neuropace for each patient in folders labeled UPenn_PatientInitials
+3. A key list (in CSV form) we create that associates the processed file names with the patient whose data it contains 
 
 ## Outputs of Scripts
-1. 
+1. The processed CSV file, which is outputted by the Python script and is identical to the original CSV file except that it also contains a column to keep track of the new file names
+2. The processed .dat files, which are outputted by the Python script and are identical to the original .dat files in content but have been assigned to a different file name
 
 ## Notes
 <b name="note-1">1.</b> Note that if this installation method is used, **all scripts** must also be run from inside the virtual environment.
