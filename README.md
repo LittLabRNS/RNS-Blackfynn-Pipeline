@@ -10,6 +10,8 @@ This collection of scripts converts and analyzes the information in Neuropace RN
 
 * findStim finds Stimulations or Stimulation Groups in AllData and labels them according to number of stimulation per group, length of stimulation group, and gap between stimulations.
 
+* plotStim plots a stimulation/stimulation group, pre stimulation period, and post stimulation period
+
 ## Background
 The Neuropace Responsive Neurostimulator (RNS) detects epileptiform activity and stimulates regions of the brain to terminate siezures. Though the RNS is continuously monitoring brain activity, it only saves 90 second recordings when it is triggered to do so. Recording triggers include:
 
