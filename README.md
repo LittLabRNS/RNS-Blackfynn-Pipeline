@@ -2,13 +2,13 @@
 This collection of scripts converts and analyzes the information in Neuropace RNS .dat files.
 
 ## Functions
-MEF_writer.jar converts .dat files to .mef files
+* MEF_writer.jar converts .dat files to .mef files
 
-dat2mef_RNS.m calls MEF_writer.jar to convert Neuropace RNS .dat files to .mef files and organize them so that they can be uploaded to Blackfynn.
+* dat2mef_RNS.m calls MEF_writer.jar to convert Neuropace RNS .dat files to .mef files and organize them so that they can be uploaded to Blackfynn.
 
-dat2vector.m concatenates Voltage data in .dat files into vectors AllData and AllTime to allow for easy matrix calculations
+* dat2vector.m concatenates Voltage data in .dat files into vectors AllData and AllTime to allow for easy matrix calculations
 
-findStim finds Stimulations or Stimulation Groups in AllData and labels them according to number of stimulation per group, length of stimulation group, and gap between stimulations.
+* findStim finds Stimulations or Stimulation Groups in AllData and labels them according to number of stimulation per group, length of stimulation group, and gap between stimulations.
 
 ## Background
 The Neuropace Responsive Neurostimulator (RNS) detects epileptiform activity and stimulates regions of the brain to terminate siezures. Though the RNS is continuously monitoring brain activity, it only saves 90 second recordings when it is triggered to do so. Recording triggers include:
