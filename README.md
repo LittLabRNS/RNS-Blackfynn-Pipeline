@@ -43,14 +43,14 @@ deactivate # to exit the virtual environment
 ### Configuring the Blackfynn client
 For the Blackfynn API to work correctly, the user profile must be set up (see [this guide](http://docs.blackfynn.io/platform/clients/getting_started.html) for help).
 
-### Inputs and Outputs
+## Inputs and Outputs
 
-## Inputs
+### Inputs
 1. An ECoG_Catalog.csv file sent from Neuropace mapping each .dat file to a timestamp and a patient id
 2. The .dat files sent from Neuropace for each patient in folders labeled UPenn_PatientInitials
 3. A key list (in CSV form) we create that associates the processed file names with the patient whose data it contains 
 
-## Outputs
+### Outputs
 1. The processed CSV file, which is outputted by the Python script and is identical to the original CSV file except that it also contains a column to keep track of the new file names
 2. The processed .dat files, which are outputted by the Python script and are identical to the original .dat files in content but have been assigned to a different file name
 
