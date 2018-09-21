@@ -1,7 +1,7 @@
-function [StimStartIndex,StimEndIndex,StimStartTimes,StimEndTimes, StimGap,...
-    StimLengths, MaxStimLength, MinStimLength, MaxStimIndex, MinStimIndex, UTCStartTimes,NumStims]...
+function [StimStartIndex, StimEndIndex, StimStartTimes, StimEndTimes, StimGap,...
+    StimLengths, MaxStimLength, MinStimLength, MaxStimIndex, MinStimIndex, UTCStartTimes, NumStims]...
     = findStim(AllData, AllTime, varargin)
-% findStim finds the Stimulation periods in Neuropace RNS timeseries data
+% findStim finds the Stimulation Group periods in Neuropace RNS timeseries data
 %
 %   To use default Channel=1 and Min=15
 %
@@ -28,17 +28,18 @@ function [StimStartIndex,StimEndIndex,StimStartTimes,StimEndTimes, StimGap,...
 %
 % Outputs
 %
-%     StimStartIndex: Index of Stimulation Start Points
-%     StimEndIndex: Index of Stimulation End Points
-%     StimStartTimes: Start UTC Times of Stimulation
-%     StimEndTimes: End UTC Times of Stimulation
-%     StimGap: Time between each stimulation and the next one in Samples(1/250 s)
-%     StimLengths: Length of each Stimulation flatline in Samples(1/250 s)
-%     MaxStimLength: Longest Stimulation flatline Length in Samples
-%     MinStimLength: Minimum Stimulation flatline length in Samples
-%     MaxStimIndex: Index of longest stimulation flatlines
-%     MinStimIndex: Index of shortest stimulation flatlines
+%     StimStartIndex: Index of Stimulation Group Start Points
+%     StimEndIndex: Index of Stimulation Group End Points
+%     StimStartTimes: Start UTC Times of Stimulation Group
+%     StimEndTimes: End UTC Times of Stimulation Group
+%     StimGap: Time between each stimulation Group and the next one in Samples(1/250 s)
+%     StimLengths: Length of each Stimulation Group measured in Samples(1/250 s)
+%     MaxStimLength: Longest Stimulation Group Length in Samples
+%     MinStimLength: Minimum Stimulation Group length in Samples
+%     MaxStimIndex: Index of longest stimulation Group
+%     MinStimIndex: Index of shortest stimulation Group
 %     UTCStartTimes: The start times of each RNS recording
+%     NumStims: The number of smaller stimulations per stim group
 %
 %   Arjun Ravi Shankar
 %   Litt Lab July 2018
@@ -89,12 +90,15 @@ StimEndTimes=AllTime(StimEndIndex);
 StimGap=StimStartTimes(2:end)-StimEndTimes(1:end-1);
 Double=find(StimGap<=4000000);
 
-%Count Number of Stims
+%Count Number of Stimulation Groups
+
 % First Assume Every Stimulation is a Single Stim
 NumStims=ones(1,length(StimStartTimes));
+
 %Correct for the Stimulations which are consecutive
 NumStims(Double)=2;
 NumStims(Double+1)=2;
+
 %Count number of stims in multiple stim chunks
 DiffDouble=diff(Double);
 DiffDouble(DiffDouble~=1)=0;
